@@ -47,7 +47,9 @@ DJANGO_APPS = [
     'django.contrib.staticfiles',
 ]
 
-LOCAL_APPS = []
+LOCAL_APPS = [
+    'my_project.apps.drf'
+]
 
 VENDOR_APPS = []
 
