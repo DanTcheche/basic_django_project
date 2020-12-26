@@ -16,7 +16,7 @@ class AccountSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Account
-        fields = ('name', 'zipcode', 'address', 'country')
+        fields = ('name', 'zip_code', 'address', 'country', 'is_developer')
 
     def get_is_developer(self, account):
         return account.name.startswith('dev')
