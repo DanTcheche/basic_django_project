@@ -51,7 +51,9 @@ LOCAL_APPS = [
     'my_project.apps.drf'
 ]
 
-VENDOR_APPS = []
+VENDOR_APPS = [
+    'rest_framework'
+]
 
 INSTALLED_APPS = VENDOR_APPS + LOCAL_APPS + DJANGO_APPS
 
