@@ -14,21 +14,19 @@ class CountrySerializer(serializers.ModelSerializer):
 
 
 class AccountSerializer(serializers.ModelSerializer):
-    country = CountrySerializer()
+    country = CountrySerializer(read_only=True)
+    country_id = serializers.PrimaryKeyRelatedField(write_only=True, queryset=Country.objects)
     is_developer = serializers.SerializerMethodField()
 
     class Meta:
         model = Account
         depth = 1
-        fields = ('name', 'zip_code', 'address', 'country', 'is_developer')
+        fields = ('name', 'zip_code', 'address', 'country', 'country_id', 'is_developer', )
+        read_only_fields = ('country', )
 
     def get_is_developer(self, account):
         return account.name.startswith('dev')
 
     def create(self, validated_data):
-        country_data = validated_data.pop('country')
-        country, _ = Country.objects.get_or_create(name=country_data['name'],
-                                                   code=country_data['code'])
-        instance = Account.objects.get_or_create(**validated_data,
-                                                 country=country)
-        return instance
+        validated_data['country_id'] = validated_data['country_id'].id
+        return super().create(validated_data)
