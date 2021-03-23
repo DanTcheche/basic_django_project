@@ -16,6 +16,7 @@ ENV TZ=America/Argentina/Buenos_Aires \
 ENV PYTHONUNBUFFERED 1
 
 # System deps:
+RUN pip install --upgrade pip
 RUN pip install "poetry==$POETRY_VERSION"
 
 WORKDIR $APP_DIR
