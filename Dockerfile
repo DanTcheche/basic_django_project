@@ -9,7 +9,7 @@ ENV TZ=America/Argentina/Buenos_Aires \
     MEDIA_ROOT=/app/media/ \
     STATIC_ROOT=/app/static/ \
     APP_DIR=/app/code/ \
-    POETRY_VERSION=1.0.0
+    POETRY_VERSION=1.3.2
 
 # The enviroment variable ensures that the python output is set straight
 # to the terminal with out buffering it first
@@ -26,7 +26,7 @@ COPY poetry.lock pyproject.toml $APP_DIR
 
 # Project initialization:
 RUN poetry config virtualenvs.create false \
-  && poetry install --no-dev
+  && poetry install --no-root
 
 # Creating folders, and files for a project:
 COPY . $APP_DIR

@@ -9,7 +9,7 @@ Build project:
 Try next commands with `sudo` if you get permission errors.
 - `docker-compose build`.
 - `docker-compose up -d`.
-- Server will run in port 8080.
+- Server will run in port 8000.
 
 ### Requirements
 
