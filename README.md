@@ -13,13 +13,13 @@ Try next commands with `sudo` if you get permission errors.
 
 ### Requirements
 
-This projects requires python 3.6.
+This projects requires python 3.11.
 Python 3 can be installed with [pyenv](https://github.com/pyenv/pyenv).
 
 1. Use [pyenv-installer](https://github.com/pyenv/pyenv-installer) for installing pyenv
 1. See which python versions are available: `pyenv install --list`
-1. Install python 3. Example: `pyenv install 3.6.6` (3.6.6 or higher)
-1. `pyenv shell 3.6.6`
+1. Install python 3. Example: `pyenv install 3.11.1` (3.11.1 or higher)
+1. `pyenv shell 3.11.1`
 1. `poetry shell`
 
 
